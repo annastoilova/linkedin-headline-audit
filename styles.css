@@ -513,6 +513,81 @@ textarea {
   border-color: var(--green);
 }
 
+/* ============== CALL CTA (high-ticket) ============== */
+.call-card {
+  background: linear-gradient(135deg, #FFF8E5 0%, #FFEFD4 100%);
+  border: 1.5px solid var(--gold);
+  padding: 32px 28px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.call-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 92, 53, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.call-tag {
+  position: relative;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--coral);
+  background: white;
+  padding: 6px 12px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+.call-card h3 {
+  position: relative;
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--near-black);
+  margin-bottom: 10px;
+}
+
+.call-card p {
+  position: relative;
+  color: var(--near-black);
+  font-size: 15px;
+  line-height: 1.55;
+  margin-bottom: 18px;
+  max-width: 540px;
+  opacity: 0.78;
+}
+
+.call-link {
+  position: relative;
+  display: inline-block;
+  background: var(--near-black);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 13px 26px;
+  border-radius: 100px;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.call-link:hover {
+  background: var(--violet);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(107, 33, 255, 0.25);
+}
+
 /* ============== CTA ============== */
 .cta-card {
   background: var(--near-black);
@@ -631,6 +706,7 @@ textarea {
   .hero,
   .card,
   .score-card,
+  .call-card,
   .cta-card { padding: 28px 22px; }
   .card-title { font-size: 19px; }
   .score-number { font-size: 68px; }
