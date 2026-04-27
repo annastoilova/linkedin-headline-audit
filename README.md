@@ -8,10 +8,9 @@ A free tool from The MVB Lab. Audits LinkedIn headlines and returns a score, spe
 headline-audit-vercel/
 ├── api/
 │   └── audit.js          ← Serverless function (handles the AI call)
-├── public/
-│   ├── index.html        ← The page
-│   ├── styles.css        ← All styling
-│   └── app.js            ← Frontend logic
+├── index.html            ← The page
+├── styles.css            ← All styling
+├── app.js                ← Frontend logic
 ├── vercel.json           ← Vercel config
 ├── package.json          ← Project metadata
 └── README.md             ← This file
@@ -23,7 +22,7 @@ headline-audit-vercel/
 
 Go to https://console.anthropic.com → API Keys → Create Key.
 
-Top up $5–10 of credit. Each audit costs roughly $0.01–0.02, so $10 covers around 500–1,000 audits.
+Top up $5 to $10 of credit. Each audit costs roughly $0.01 to $0.02, so $10 covers around 500 to 1,000 audits.
 
 Copy the key. You'll paste it into Vercel in step 4.
 
@@ -61,7 +60,7 @@ Open the URL. Run an audit on your own headline. Check it works.
 
 ## Adding a custom domain (optional)
 
-In Vercel → your project → Settings → Domains. Add `audit.theMVBlab.com` (or whatever subdomain you like) and follow Vercel's DNS instructions.
+In Vercel → your project → Settings → Domains. Add `audit.thmvblab.com` (or whatever subdomain you like) and follow Vercel's DNS instructions.
 
 ## Updating the tool later
 
@@ -73,14 +72,17 @@ The serverless function rejects oversized inputs (500-char headlines, 300-char a
 
 ## Troubleshooting
 
+**404 NOT_FOUND on the deployed URL**
+→ Make sure `index.html`, `styles.css`, and `app.js` are at the project root, not inside a subfolder. Vercel serves static files from the root automatically.
+
 **"Something went wrong" on every audit**
-→ The API key isn't set, or it's wrong. Re-check the environment variable in Vercel.
+→ The API key isn't set, or it's wrong. Re-check the environment variable in Vercel → Settings → Environment Variables. After changing it, redeploy from the Deployments tab.
 
 **Function returns 500**
-→ Open the Vercel dashboard → Logs → click on the function call to see the error. Most likely an Anthropic API issue (no credit, wrong model name, etc.).
+→ Open the Vercel dashboard → your project → Logs. Most likely an Anthropic API issue (no credit, wrong model name, etc.).
 
 **Page loads but the button does nothing**
-→ Open browser console (F12). If you see CORS errors, your domain config is off. If you see a 404 on `/api/audit`, the file isn't in the right place — make sure `audit.js` is inside the `api/` folder at the project root.
+→ Open browser console (F12). If you see a 404 on `/api/audit`, the file isn't in the right place. Make sure `audit.js` is inside the `api/` folder at the project root.
 
 ---
 

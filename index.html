@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Audit your LinkedIn headline in 60 seconds. Get a score, specific feedback, and three AI-powered rewrites. Free tool from The MVB Lab.">
+  <title>LinkedIn Headline Audit · The MVB Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <header class="hero">
+      <span class="tag">The MVB Lab · LinkedIn Tool</span>
+      <h1>Audit your headline.<br><span class="accent">In 60 seconds.</span></h1>
+      <p class="subtitle">Your headline is the first thing every visitor reads. Paste yours below and get a score, specific feedback, and three rewrites built around how you actually want to be found.</p>
+    </header>
+
+    <section id="form-section">
+
+      <div class="card">
+        <div class="card-label"><span class="num">1</span>Your headline</div>
+        <h2 class="card-title">Paste it as it appears on LinkedIn</h2>
+        <p class="card-desc">Don't edit it first. We need to see what visitors see.</p>
+
+        <div class="input-wrap">
+          <label for="headline" class="visually-hidden">Your LinkedIn headline</label>
+          <textarea id="headline" placeholder="e.g. Founder & CEO | Helping businesses grow through innovative strategies | Coffee enthusiast"></textarea>
+          <div class="char-count" id="charCount">
+            <span><span id="charNum">0</span> / 220 characters</span>
+            <span id="charNote">LinkedIn limit</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><span class="num">2</span>Your context</div>
+        <h2 class="card-title">Who's your ideal client?</h2>
+        <p class="card-desc">One line. Industry, role, or the specific person you help.</p>
+
+        <div class="input-wrap">
+          <label for="audience" class="visually-hidden">Your target audience</label>
+          <input type="text" id="audience" placeholder="e.g. Female therapists building private practices online">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><span class="num">3</span>Your outcome</div>
+        <h2 class="card-title">What result do you deliver?</h2>
+        <p class="card-desc">The transformation, in plain words. No buzzwords.</p>
+
+        <div class="input-wrap">
+          <label for="outcome" class="visually-hidden">The outcome you deliver</label>
+          <input type="text" id="outcome" placeholder="e.g. Help them get fully booked through LinkedIn without ads">
+        </div>
+      </div>
+
+      <button class="btn" id="auditBtn">
+        Audit my headline <span class="arrow">→</span>
+      </button>
+
+      <div class="error" id="error" role="alert"></div>
+
+    </section>
+
+    <div class="card loading" id="loading" hidden>
+      <div>
+        <span class="loading-dot"></span>
+        <span class="loading-dot"></span>
+        <span class="loading-dot"></span>
+      </div>
+      <p class="loading-text">Reading like a recruiter. Thinking like a buyer.</p>
+    </div>
+
+    <section class="results" id="results" hidden>
+
+      <div class="score-card">
+        <div class="score-label">Your headline score</div>
+        <div class="score-number"><span id="scoreNum">0</span><span class="total">/10</span></div>
+        <p class="score-verdict" id="scoreVerdict"></p>
+      </div>
+
+      <div class="feedback-card wins">
+        <h3>What's working</h3>
+        <ul class="feedback-list wins" id="winsList"></ul>
+      </div>
+
+      <div class="feedback-card fixes">
+        <h3>What to fix</h3>
+        <ul class="feedback-list fixes" id="fixesList"></ul>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><span class="num">★</span>Three rewrites</div>
+        <h2 class="card-title">Pick one. Edit it. Ship it.</h2>
+        <p class="card-desc">Each version takes a different angle. Use whichever lands hardest for your audience.</p>
+
+        <div id="rewritesContainer"></div>
+      </div>
+
+      <div class="cta-card">
+        <h3>Ready to fix the rest of your profile?</h3>
+        <p>The full LinkedIn module inside The MVB Lab walks you through About, Featured, and the top 5 things to fix on your LinkedIn profile.</p>
+        <a href="https://skool.com/mvb" target="_blank" rel="noopener" class="cta-link">Go to the classroom →</a>
+      </div>
+
+      <button class="reset-btn" id="resetBtn">← Audit another headline</button>
+
+    </section>
+
+    <footer class="footer">
+      <div class="tagline">Authenticity over polish. Clarity over noise.</div>
+      THE MVB LAB · <a href="https://skool.com/mvb" target="_blank" rel="noopener">skool.com/mvb</a>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
